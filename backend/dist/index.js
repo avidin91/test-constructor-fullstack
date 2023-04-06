@@ -8,7 +8,7 @@ app.get('/api', (req, res) => {
     });
 });
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send('Привет, хер');
 });
 app.listen(PORT, () => {
     console.log(`Server starting on port ${PORT}`);
