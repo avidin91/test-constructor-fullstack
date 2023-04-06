@@ -13,7 +13,7 @@ app.get('/api', (req:any, res:any) => {
 })
 
 app.get('/', (req:any, res:any) => {
-    res.send('Привет, хер')
+    res.send('Привет, хер1')
 })
 
 app.listen(PORT, () => {
