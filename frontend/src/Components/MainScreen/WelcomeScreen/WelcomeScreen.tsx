@@ -19,6 +19,8 @@ const WelcomeScreen = () => {
                     {
                         !data ? 'Loading...' : data
                     }
+                    <br/>
+                    1234
                 </p>
             </Box>
             <Box sx={{margin: '0 auto', width: '650px'}}>
