@@ -20,7 +20,7 @@ const WelcomeScreen = () => {
                         !data ? 'Loading...' : data
                     }
                     <br/>
-                    1234
+                    1234z
                 </p>
             </Box>
             <Box sx={{margin: '0 auto', width: '650px'}}>
