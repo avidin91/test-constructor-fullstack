@@ -1,0 +1,14 @@
+.answer {
+    display: flex;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.answerText {
+    width: 100%;
+}
+
+.answerText p {
+    margin: 10px;
+    text-align: left;
+}

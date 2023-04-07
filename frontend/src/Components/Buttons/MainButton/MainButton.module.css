@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+.button{
+    display: flex;
+    margin: 5px;
+    padding: 0 10px;
+    width: 260px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #54ad54;
+}
+
+.button:hover {
+    background-color: #09ad09;
+    cursor: pointer;
+}
+
+.button p {
+    margin: auto;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.button a:hover {
+    text-decoration: underline;
+}
+
+
+

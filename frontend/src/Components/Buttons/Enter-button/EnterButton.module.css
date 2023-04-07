@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+.button{
+    display: flex;
+    margin: 5px;
+    padding: 0 10px;
+    width: auto;
+    height: 70px;
+    border-radius: 0px;
+    background-color: #04667c;
+}
+
+.button:hover {
+    background-color: #034250;
+    cursor: pointer;
+}
+
+.button p {
+    margin: auto;
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+
+

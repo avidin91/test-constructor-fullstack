@@ -1,0 +1,15 @@
+.pTitle {
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center
+}
+
+.pCategory {
+    font-size: 17px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.pCategory:hover {
+    font-weight: bold;
+}

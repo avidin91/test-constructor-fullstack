@@ -1,0 +1,30 @@
+.previewScreen {
+    position: sticky;
+    top: 200px;
+    margin: 10px 0 21px 30px;
+    width: 470px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #f8fbc921;
+    box-shadow: 0 0 10px #979292;
+}
+
+.title p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.questionBlock {
+    border: 1px solid #ede7e7;
+    margin: 10px;
+}
+
+.questionBlock span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.questionTitle {
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -1,0 +1,42 @@
+.main {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.main p {
+    color: #222222;
+}
+
+.title {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.title p {
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+
+.description {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.description p {
+    line-height: 1.5em;
+}
+
+.video {
+    margin: 0 auto;
+    width: 560px;
+}
+
+.button {
+    margin: 50px auto;
+    width: 260px;
+}
+
+.button p {
+    color: white;
+}

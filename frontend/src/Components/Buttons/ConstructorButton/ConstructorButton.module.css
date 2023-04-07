@@ -1,0 +1,23 @@
+.questionAdd {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    align-items: center;
+    border: 1px solid black;
+
+}
+
+.questionAdd p {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.questionAdd:hover {
+    cursor: pointer;
+    background-color: #dfdfdf;
+}
