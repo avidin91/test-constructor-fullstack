@@ -1,23 +1,13 @@
 const express = require('express')
-
+const app = express()
 const PORT = process.env.PORT || 9000
 
-const app = express()
+const indexRouter = require('./../routes/index')
+const usersRouter = require('./../routes/users') // Это, чтобы было видно users по пути '/' внутри файлйа роута.
 
-
-
-app.get('/api', (req:any, res:any) => {
-    res.json({
-        message: 'Hello from backend123'
-    })
-})
-
-app.get('/', (req:any, res:any) => {
-    res.send('Привет, хер1')
-})
+app.use('/', indexRouter)
+app.use('/users', usersRouter)
 
 app.listen(PORT, () => {
     console.log(`Server starting on port ${PORT}`)
 })
-
-console.log('test1')
