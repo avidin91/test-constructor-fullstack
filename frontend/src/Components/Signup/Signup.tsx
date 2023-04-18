@@ -29,7 +29,7 @@ const Signup = () => {
          return;
      }
 
-     const res = await fetch('http://localhost:9000/users/signup', { // res - ответ, который придёт в backend
+     const res = await fetch('https://api.microai.ru/users/signup', { // res - ответ, который придёт в backend
          method: 'post',
          body: JSON.stringify(user), // приводит json объект user к состоянию строки
          headers: {
