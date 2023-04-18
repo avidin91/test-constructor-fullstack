@@ -43,12 +43,14 @@ const Header = () => {
                     <Logo text={'TESTCUBE'}/>
                     <Box sx={{width: 390}}>
                         <Box sx={{ float: 'right',}}>
-                            <Button variant="outlined" sx={{color: 'white',
-                                '&:hover': {border: '2px solid white'},
-                                borderColor: 'white'}}>Регистрация</Button>
-                            <Button variant="outlined" sx={{ml: '10px', color: 'white',
-                                '&:hover': {border: '2px solid white'},
-                                borderColor: 'white', }}>Вход</Button>
+                                <Button variant="outlined" component={NavLink}
+                                        to={'/signup'} sx={{color: 'white',
+                                    '&:hover': {border: '2px solid white'},
+                                    borderColor: 'white'}}>Регистрация</Button>
+                                <Button variant="outlined" component={NavLink}
+                                        to={'/login'} sx={{ml: '10px', color: 'white',
+                                    '&:hover': {border: '2px solid white'},
+                                    borderColor: 'white', }}>Вход</Button>
                         </Box>
                     </Box>
                 </Toolbar>

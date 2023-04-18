@@ -2,12 +2,14 @@
 const mongoose = require('mongoose') // mongoose позволяет документы в БД представлять в качестве объектов
 const Schema = mongoose.Schema
 
+
 const schema = new Schema({ // Описываем, что будет содержать User
     password: {
         type: String
     },
     username: {
-        type: String
+        type: String,
+        unique: true // юзернэйм уникальный
     },
     role: {
         type: String,
@@ -15,5 +17,5 @@ const schema = new Schema({ // Описываем, что будет содер�
     }
 }, {autoCreate: true})
 
-const User = mongoose.model('user', schema)
+const User = mongoose.model('users', schema)
 module.exports = User

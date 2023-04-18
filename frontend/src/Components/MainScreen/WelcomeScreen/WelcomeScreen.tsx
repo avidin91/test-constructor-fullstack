@@ -5,7 +5,7 @@ import {Box, Button} from "@mui/material";
 const WelcomeScreen = () => {
     const [data, setData] = useState(null)
     useEffect(() => {
-        fetch('api.microai.ru/api')
+        fetch('/users')
             .then((response) => response.json())
             .then(response => setData(response.message))
     }, [])

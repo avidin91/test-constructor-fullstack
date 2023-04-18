@@ -8,8 +8,11 @@ router.get('/', (req, res) => { //app меняем на router. Сам путь 
     })
 })
 
-router.get('/:id', (req, res) => {
-    res.json({ok: true, user: req.params.id})
+router.post('/signup', async (req, res) => {
+    const user = req.body // Данные в запросе приходят в body, эта переменная есть в каждом запросе
+    console.log(user)
+
+    res.json({ok: true})
 })
 
 module.exports = router;
