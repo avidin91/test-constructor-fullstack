@@ -10,6 +10,7 @@ router.get('/', (req, res) => { //app меняем на router. Сам путь 
 
 router.post('/signup', async (req, res) => {
     const user = req.body // Данные в запросе приходят в body, эта переменная есть в каждом запросе
+    console.log('req body = ', req.body)
     console.log(user)
 
     res.json({ok: true})

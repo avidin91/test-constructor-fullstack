@@ -29,8 +29,9 @@ const Signup = () => {
          return;
      }
 
-     const res = await fetch('/users/signup', { // res - ответ, который придёт в backend
+     const res = await fetch('http://localhost:9000/users/signup', { // res - ответ, который придёт в backend
          method: 'post',
+         credentials: 'include',
          body: JSON.stringify(user), // приводит json объект user к состоянию строки
          headers: {
              'Content-Type': 'application/json' // теперь backend будет понимать, что в ответе лежит объект в формате json
