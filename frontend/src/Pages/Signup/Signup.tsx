@@ -1,11 +1,19 @@
 import React, {useState} from 'react';
 import EmailValidator from 'email-validator';
+import {useNavigate} from "react-router-dom";
 
-const Signup = () => {
+interface serverHost {
+    server_host: string
+}
+
+const Signup = ({server_host}:serverHost) => {
 
     const [user, setUser] = useState({email: '', password: ''})
     const [secondPassword, setSecondPassword] = useState('')
     const [message, setMessage] = useState('')
+    const [disabled, setDisabled] = useState(false)
+
+    const navigate = useNavigate()
 
     function changeUser(name:any, value:any) {
         setUser({
@@ -15,21 +23,25 @@ const Signup = () => {
     }
 
     async function signUp() {
+        setDisabled(true)
         setMessage('')
      if (!user.email || !user.password || !secondPassword) {
         setMessage('Заполните все поля')
+         setDisabled(false)
          return;
      }
      if (user.password !== secondPassword) {
          setMessage('Пароли не совпадают')
+         setDisabled(false)
          return;
      }
      if (!EmailValidator.validate(user.email)) {
          setMessage('Email введён некорректно')
+         setDisabled(false)
          return;
      }
 
-     const res = await fetch('http://localhost:9000/users/signup', { // res - ответ, который придёт в backend
+     const res = await fetch(server_host + '/users/signup', { // res - ответ, который придёт в backend
          method: 'post',
          credentials: 'include',
          body: JSON.stringify(user), // приводит json объект user к состоянию строки
@@ -38,7 +50,13 @@ const Signup = () => {
          }
      })
         const data = await res.json(); // с backend придёт тело ответа, и мы должны распарсить его в json. Если не написать await, к нам придёт не json, а promise
-        console.log(data)
+        if (data.ok) {
+            setMessage('Регистрация прошла успешно. Сейчас вы будете перенаправлены в личный кабинет')
+            navigate('/dashboard')
+        } else {
+            setDisabled(false)
+            setMessage('Ошибка. Попробуйте другие данные.')
+        }
     }
 
     return (
@@ -48,7 +66,7 @@ const Signup = () => {
             </h1>
             {/*сюда будем выводить ошибки*/}
             <div>{message}</div>
-            <form action="">
+            <form action="src/Pages/Signup/Signup">
                 <div className={'flex flex-col'}>
                     <label htmlFor="">Email</label>
                     <input type={"text"} name={'email'} onChange={e => changeUser('email', e.target.value)} value={user.email}/>
@@ -62,7 +80,7 @@ const Signup = () => {
                     <input type={"password"} onChange={e => setSecondPassword(e.target.value)}/>
                 </div>
                 <div>
-                    <button type={'button'} className={'rounded-sm border-2'} onClick={signUp}>Зарегистрироваться</button>
+                    <button type={'button'} className={'rounded-sm border-2'} onClick={signUp} disabled={false}>Зарегистрироваться</button>
                 </div>
             </form>
         </div>

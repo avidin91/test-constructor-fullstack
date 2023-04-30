@@ -6,16 +6,17 @@ async function dbConnect() {
         return mongoose.connection.db; //Значит оно будет возвращаться в другой сервис
     }
 
-    let url = 'mongodb://localhost:27017/microai'; // Если соединения нет, то будем пытаться подключиться к БД
+    let url = 'mongodb://127.0.0.1:27017/microai'; // Если соединения нет, то будем пытаться подключиться к БД
     let options = {
         user: 'admin5',
         pass: 'qwerty5nero',
         auth: {authSource: 'microai'}, // Ресурс, где мы будем искать юзера для подключения
-        family:4
+        // family:4
     }
 
+
     return mongoose.connect(url, options).then(
-        () => {console.log('БД подключена')},
+        () => {console.log('БД подключена', url)},
         (e)=>console.error(e)
     ); // Конец подключения к БД
 }

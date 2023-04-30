@@ -41,6 +41,7 @@ const Header = () => {
                                 size="small" color="success">Создать тест</Button>
                     </Box>
                     <Logo text={'TESTCUBE'}/>
+                    <NavLink to={'/users'}>Пользователи</NavLink>
                     <Box sx={{width: 390}}>
                         <Box sx={{ float: 'right',}}>
                                 <Button variant="outlined" component={NavLink}
